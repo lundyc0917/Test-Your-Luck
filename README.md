@@ -6,7 +6,6 @@
 
   
 
-
   :round_pushpin: [Click here to navigate to deployed app on Heroku!](https://.herokuapp.com) :round_pushpin:
   
   ## Table of Contents
