@@ -1,6 +1,6 @@
 const axios = require('axios')
 
-const api_key = process.argv[2] || 'YOUR_API_KEY'
+const api_key = process.argv[2] || '5afb384791ae190052806206a60c381b'
 
 const sport_key = 'upcoming' // use the sport_key from the /sports endpoint below, or use 'upcoming' to see the next 8 games across all sports
 
@@ -15,7 +15,7 @@ const market = 'Spreads' // h2h | spreads | totals
 */
 axios.get('https://api.the-odds-api.com/v3/sports', {
     params: {
-        api_key: '5afb384791ae190052806206a60c381b'
+        api_key: api_key
     }
 })
 .then(response => {
@@ -32,7 +32,7 @@ axios.get('https://api.the-odds-api.com/v3/sports', {
 */
 axios.get('https://api.the-odds-api.com/v3/odds', {
     params: {
-        api_key: '5afb384791ae190052806206a60c381b',
+        api_key: api_key,
         sport: sport_key,
         region: region,
         mkt: market,
