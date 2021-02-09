@@ -4,7 +4,7 @@
 
   ## Description
 
-  
+  This application is for all the sports betters lovers out there. This application will allow you to place bets between two teams using an API which will be stored in the database as well as your current balance, bet amount and new amount.
 
   :round_pushpin: [Click here to navigate to deployed app on Heroku!](https://.herokuapp.com) :round_pushpin:
   
@@ -17,7 +17,6 @@
   * [License](#license)
   * [Collaboration](#collaboration)
   * [Technologies](#technologies)
-  * [Contact Information](#contact-information)
  
 
  ## Demonstration
@@ -73,6 +72,7 @@
   * [Jerquanus Swan](https://github.com/Jerquanus)
   * [Austin Cochran](https://github.com/Austinc12)
   * [Cam Lundy](https://github.com/lundyc0917)
+  * [Nicole Catapano](https://github.com/nsc9605)
 
     
   ## Technologies
@@ -87,8 +87,4 @@
   * [Visual Studio Code](https://code.visualstudio.com/)
   * Terminal / Git Bash
     
-  ## Contact Information
-
-   * GitHub: [nsc9605](https://github.com/nsc9605)
-   * Portfolio: [Deploy Portfolio](https://nsc9605.github.io/Responsive-Portfolio/)
-   * Email:  [Nicole Catapano](mailto:nsc9605@gmail.com)
+ 
