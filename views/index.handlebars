@@ -7,31 +7,40 @@
     <div>
         <h2>Odds</h2>
         <div>
-            <h3>{{Team1}}</h3>
-            <div class="bet-form">
-            <form class="newBetForm">
-                <input type="text" name="" placeholder="Enter an amount to place bet!"></input>
-                <button id="" type="submit" data-id="{{this.id}}">Place Bet!</button>
-            </form>
-        </div>
+            <ul>
+                {{#each selections}}
+                <h3>{{team1}}</h3>
+                <div class="bet-form">
+                    <form class="newBetForm">
+                        <input type="text" name="betAmount" placeholder="Enter an amount to place bet!"></input>
+                        <button id="betAmount" type="submit" data-id="{{this.id}}">Place Bet!</button>
+                    </form>
+                </div>
+                {{/each}}
+            </ul>
         </div>
     </div>
 
     <div>
         <h2>Odds</h2>
         <div>
-            <h3>{{Team2}}</h3>
-            <div class="reward">
-                <p>
-                    Pay Out: {{this.pay_out}}
-                </p>
-            </div>
+            <ul>
+                {{#each selections}}
+                <h3>{{team2}}</h3>
+                <div class="reward">
+                    <p>
+                        Pay Out: {{this.result}}
+                    </p>
+                </div>
+
+               {{/each}}
+            </ul>
         </div>
-        
+
     </div>
     <button type="submit" id="" class="">Generate Bet!</button>
 
-<div>
-    <h3>Current Balance: {{this.current_balance}}</h3>
-</div>
+    <div>
+        <h3>Current Balance: {{this.current_balance}}</h3>
+    </div>
 </div>
