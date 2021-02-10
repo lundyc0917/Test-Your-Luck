@@ -6,7 +6,7 @@ CREATE DATABASE luck_db;
 
 USE luck_db;
 
-CREATE TABLE selections(
+CREATE TABLE testluck(
     id INT NOT NULL AUTO_INCREMENT,
     team1 VARCHAR (50) NOT NULL,
     team2 VARCHAR (50) NOT NULL,
