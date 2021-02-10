@@ -42,7 +42,7 @@ axios.get('https://api.the-odds-api.com/v3/odds', {
     // response.data.data contains a list of live and 
     //   upcoming events and odds for different bookmakers.
     // Events are ordered by start time (live events are first)
-    console.log(response.data.data)
+    console.log(response.data.data[Math.floor((Math.random() * 10)+1)])
 
     // Check your usage
     console.log('Remaining requests',response.headers['x-requests-remaining'])
