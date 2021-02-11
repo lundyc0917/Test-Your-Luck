@@ -1,25 +1,70 @@
 // Dependencies
-const express = require("express");
+const express = require('express');
+const Sequelize = require('sequelize');
 const router = express.Router();
-const luck = require("../models/luck.js");
+const db = require('../models');
+const axios = require('axios').default
 
 // Create all the routes and set up logic.
-router.get("/", (req, res) => {
-  luck.selectAll((data) => {
-    var hbsObject = {
-      luck: data,
-    };
-    console.log(hbsObject);
-    res.render("index", hbsObject);
-  });
+router.get('/', (req, res) => {
+  res.redirect('/odds');
 });
 
-router.post("/api/luck", (req, res) => {
-  luck.insertOne((result) => {
-    res.json({ id: result.insertId });
-    res.status(200).end();
-  });
+router.get('/odds', async (req, res) => {
+  try {
+    const dbOdds = await db.Odds.findAll({});
+  
+  const hbsObject = {
+    odds: dbOdds,
+  };
+  console.log(hbsObject);
+  return res.render('index', hbsObject);
+} catch (err) {
+  return res.status(500).json(err);
+}
 });
+
+// post route to create bet
+router.post('/api/odds/create', async (req, res) => {
+  const newBet = new db.Odds({
+    bet_amount: req.body.bet_amount, 
+  });
+  try {
+    const dbOdds = await newBet.save();
+    res.redirect('/');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+  });
+
+router.put('/api/odds/update', async (req, res) => {
+  // var condition = 'id = ' + req.params.id;
+  // console.log(condition);
+  const dbOdds = await db.Odds.update(
+    { 
+      bet_amount: dbOdds.bet_amount,
+      new_amount: req.body.new_amount
+
+     },
+     {
+     where: {
+       id: req.body.id,
+     },
+    },
+  ).then((dbOdds) => {
+    res.json('/');
+  });
+})
+
+
+//     (result) => { 
+//       if (result.changedRows === 0) {
+//         return res.status(404).end();
+//       } else {
+//         res.status(200).end();
+//       }
+//     });
+//     console.log('updated')
 
 
 // Export routes for server.js to use.
