@@ -44,11 +44,15 @@
   The following dependencies are required to be installed for this application to run properly:
       
       npm i
+      npm install axios
+      npm install dotenv
       npm install express
       npm install express-handlebars
       npm install mysql
-      npm install dotenv
-
+      npm install mysql2
+      npm install sequelize
+      npm install sequelize-cli
+      
 
   ## Usage
 

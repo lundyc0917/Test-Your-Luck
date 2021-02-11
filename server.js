@@ -30,7 +30,7 @@ const routes = require('./controllers/luck_controller');
 app.use(routes);
 
 
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 3306;
 db.sequelize.sync().then(() => {
   // Start our server so that it can begin listening to client requests.
   app.listen(PORT, function () {

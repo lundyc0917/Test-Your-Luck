@@ -3,7 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
-// const {DataTypes} = require('sequelize');
+const {DataTypes} = require('sequelize');
 const basename = path.basename(module.filename);
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.json')[env];
@@ -24,7 +24,7 @@ fs
   .forEach(file => {
     // const model = sequelize['import'](path.join(__dirname, file))
     const model = require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes);
-    if (typeOf(model) != "function") return;
+    // if (typeOf(model) != "function") return;
     db[model.name] = model;
   });
 

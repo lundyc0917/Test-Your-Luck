@@ -3,6 +3,7 @@ const express = require('express');
 const Sequelize = require('sequelize');
 const router = express.Router();
 const db = require('../models');
+const axios = require('axios').default
 
 // Create all the routes and set up logic.
 router.get('/', (req, res) => {

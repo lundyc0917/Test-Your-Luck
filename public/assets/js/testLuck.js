@@ -1,36 +1,42 @@
-$(function () {
+$(document.ready(() => {
   $(".generate_bet").on("submit", function (event) {
     event.preventDefault();
     console.log("WORKS");
   });
 
-  $(".newBetForm").on("submit", function (event) {
+  $(".new_bet-btn").on("click", function (event) {
     event.preventDefault();
-    let betAmount = $("#newBet_input").val().trim();
-    if (betAmount != "") {
-      var new_bet = {
-        betAmount: $("#newBet_input").val().trim(),
-      };
 
-      //  Send POST request
-      $.ajax("/api/luck", {
-        type: "POST",
-        data: new_bet,
-      }).then(function () {
-        console.log(new_bet, "New Bet Placed!");
+    // let bet_amount = $("#newBet_input").val().trim();
+    // if (newBet_input != "") {
+    //   var new_bet = {
+    //     bet_amount: $("#newBet_input").val().trim(),
+    var newBet_input = $(this).siblings('[name=bet_amount').val();
+    if (newBet_input) {
+      var bet_info = {
+        bet_amount: newBet_input,
+      };
+      console.log(bet_info);
+      // POST request
+      $.ajax({
+        method: 'POST',
+        url: '/odds/create',
+        data: bet_info,
+      }).then(function(data) {
         location.reload();
       });
-    } else {
-      alert("Please enter a numerical bet!");
-    }
-  });
-});
-
-// var newBetOdds = {
-//     team1: $('#team1').val().trim(),
-//     team2: $('#team2').val().trim(),
-//     selections: $('#selections').val().trim(),
-//     result: $('#result').val().trim(),
-//     betAmount: $('#betAmount').val().trim(),
-//     newAmount: $('#newAmount').val().trim(),
-// };
+      };
+    });
+      //  Send POST request
+    //   $.ajax("/api/luck", {
+    //     type: "POST",
+    //     data: new_bet,
+    //   }).then(function () {
+    //     console.log(new_bet, "New Bet Placed!");
+    //     location.reload();
+    //   });
+    // } else {
+    //   alert("Please enter a numerical bet!");
+    // }
+  })
+)

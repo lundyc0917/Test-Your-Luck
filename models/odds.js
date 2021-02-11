@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
 
-var Odds = sequelize.define("Odds", {
+const Odds = sequelize.define("Odds", {
     team1: {
         type: DataTypes.STRING,
         allowNull: false,
