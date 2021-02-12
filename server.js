@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-var express = require('express');
-var app = express();
-
-var PORT = process.env.PORT || 8080;
-
-// require dotenv package
-// require('dotenv').config();
-// hey
-// Serve static content for the app from the "public" directory in the application directory.
-app.use(express.static("public"));
-=======
 // Dependencies
 require('dotenv').config();
 const express = require('express');
@@ -17,7 +5,7 @@ const db = require('./models');
 const app = express();
 // Serve static content for the app from the 'public' directory in the application directory.
 app.use(express.static('public'));
->>>>>>> 02ba8dc914c525a36a9c09816f00992dad8884e4
+
 
 // Parse application body
 app.use(express.urlencoded({ extended: true }));
