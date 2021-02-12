@@ -94,4 +94,7 @@
   * [Visual Studio Code](https://code.visualstudio.com/)
   * Terminal / Git Bash
     
- 
+ ## Contribution
+
+  * [Odds API](https://github.com/the-odds-api)
+  * 

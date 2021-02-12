@@ -1,33 +1,20 @@
 // Dependencies
 // =============================================================
-var path = require("path");
-
+const path = require("path");
 const axios = require('axios');
-
-const api_key = process.argv[2] || '5afb384791ae190052806206a60c381b';
-
+const api_key = process.argv[2] || process.env.API_KEY;
 const sport_key = 'soccer_england_league1'; // use the sport_key from the /sports endpoint below, or use 'upcoming' to see the next 8 games across all sports
-
 const region = 'uk';
-
 const market = 'spreads'; // h2h | spreads | totals
 
-
-
-/*
-    Now get a list of live & upcoming games for the sport you want, along with odds for different bookmakers
-*/
-
+// Now get a list of live & upcoming games for the sport you want, along with odds for different bookmakers
 
 // Routes
 // =============================================================
 module.exports = function(app) {
-
-  // Each of the below routes just handles the HTML page that the user gets sent to.
-
   // index route loads view.html
   app.get("/", function(req, res) {
-    // res.sendFile(path.join(__dirname, "../public/main.html"));
+    res.sendFile(path.join(__dirname, "../public/main.html"));
     axios.get('https://api.the-odds-api.com/v3/odds', {
     params: {
         api_key: api_key,
@@ -35,7 +22,6 @@ module.exports = function(app) {
         region: region,
         mkt: market,
     }
-    // Hey =)
 })
 .then(response => {
     // response.data.data contains a list of live and 
@@ -59,15 +45,4 @@ module.exports = function(app) {
   app.get("/odds", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/odds.html"));
   });
-
-  // // blog route loads blog.html
-  // app.get("/blog", function(req, res) {
-  //   res.sendFile(path.join(__dirname, "../public/blog.html"));
-  // });
-
-  // // authors route loads author-manager.html
-  // app.get("/authors", function(req, res) {
-  //   res.sendFile(path.join(__dirname, "../public/author-manager.html"));
-  // });
-
 };
