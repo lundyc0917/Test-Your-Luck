@@ -6,50 +6,38 @@
 
     <div class="container-odds">
         <div>
-            <h2>Odds</h2>
+            <h2>Soccer England League</h2>
             <div>
-                <ul>
+                <div id="container-teams">
+                    {{!-- loop for array of teams --}}
                     {{#each teams}}
-                    <p><span>Team: </span> {{this}}</p>
-                    <p><span>Bet: </span> {{new_bet}} </p>
-                    <p><span>New Reward: </span> {{this.newAmount}}</p>
+                    <p><span class="category">Team: </span>{{this}}</p>
                     {{/each}}
+                    {{!-- Loop for array of odds --}}
+                    {{#each sites}}
+                    <p><span class="category"> Odds: </span>{{this.odds.spreads.odds}}</p>
+                    {{/each}}
+                    {{!-- New bet input --}}
+                    <p><span class="category">Bet: </span>{{new_bet}}</p>
+                    <p><span class="category">New Reward: </span>{{new_amount}}</p>
+
                     {{home_team}}
-                </ul>
+
+                </div>
                 <div class="bet-form">
                     <form class="newBetForm">
-                        <input id="newBet_input" type="number" name="betAmount"
+                        <input id="newBet_input" type="number" name="bet_amount"
                             placeholder="Enter an amount to place bet!"></input>
-                        <button id="newBet_input-submit" type="submit" data-id="{{this.id}}">Place Bet!</button>
+                        <button id="new_bet-btn" type="submit" data-id="{{this.id}}">Place Bet!</button>
                     </form>
                 </div>
             </div>
 
         </div>
+        <button type="submit" id="" class="generate_bet">Generate Bet!</button>
 
-        <div>
-            <h2>Odds</h2>
+        <div class="current_balance">
+            <h3>Current Balance: {{this.current_balance}}</h3>
         </div>
-        <div>
-            <ul>
-                {{#each odds}}
-                <p id="team2">Team: {{this.team2}}
-                </p>
-                <div class="reward">
-                    <p>
-                        Pay Out: {{this.result}}
-                    </p>
-                </div>
 
-                {{/each}}
-            </ul>
-        </div>
     </div>
-
-    <button type="submit" id="" class="generate_bet">Generate Bet!</button>
-
-    <div class="current_balance">
-        <h3>Current Balance: {{this.current_balance}}</h3>
-    </div>
-
-</div>

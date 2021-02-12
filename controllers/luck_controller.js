@@ -28,6 +28,8 @@ router.get('/odds', async (req, res) => {
 router.post('/api/odds/create', async (req, res) => {
   const newBet = new db.Odds({
     bet_amount: req.body.bet_amount, 
+    new_amount: req.body.new_amount,
+    
   });
   try {
     const dbOdds = await newBet.save();
@@ -44,7 +46,6 @@ router.put('/api/odds/update', async (req, res) => {
     { 
       bet_amount: dbOdds.bet_amount,
       new_amount: req.body.new_amount
-
      },
      {
      where: {

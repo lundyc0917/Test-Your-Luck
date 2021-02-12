@@ -49,15 +49,3 @@ Odds.associate = function(models) {
 }
 return Odds;
 }
-
-// const Odds = sequelize.define("Odds", {
-//     team1: DataTypes.STRING,
-//     team2: DataTypes.STRING,
-//     selections: DataTypes.STRING,
-//     result: DataTypes.STRING,
-//     bet_amount: DataTypes.INTEGER,
-//     new_amount: DataTypes.INTEGER
-// });
-// return Odds;
-// };
-

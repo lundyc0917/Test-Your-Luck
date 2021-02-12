@@ -13,15 +13,16 @@ $(document).ready(function () {
     //     bet_amount: $("#newBet_input").val().trim(),
     var newBet_input = $(this).siblings('[name=bet_amount').val();
     if (newBet_input) {
-      var bet_info = {
+      var new_bet = {
         bet_amount: newBet_input,
+        // new_amount: newBet_input
       };
-      console.log(bet_info);
+      console.log(new_bet);
       // POST request
       $.ajax({
         method: 'POST',
         url: '/odds/create',
-        data: bet_info,
+        data: new_bet,
       }).then(function(data) {
         location.reload();
       });
