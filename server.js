@@ -25,12 +25,12 @@ app.engine(
 app.set('view engine', 'handlebars');
 
 // Import routes and give the server access to them.
-const routes = require('./controllers/luck_controller');
+const routes = require('./routes/html-routes.js');
 
-app.use(routes);
+// app.use(routes);
+routes(app);
 
-
-var PORT = process.env.PORT || 3306;
+var PORT = process.env.PORT || 8080;
 db.sequelize.sync().then(() => {
   // Start our server so that it can begin listening to client requests.
   app.listen(PORT, function () {

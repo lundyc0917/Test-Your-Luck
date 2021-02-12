@@ -1,4 +1,4 @@
-$(document.ready(() => {
+$(document).ready(function () {
   $(".generate_bet").on("submit", function (event) {
     event.preventDefault();
     console.log("WORKS");
@@ -39,4 +39,3 @@ $(document.ready(() => {
     //   alert("Please enter a numerical bet!");
     // }
   })
-)
