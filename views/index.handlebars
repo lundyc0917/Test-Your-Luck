@@ -1,0 +1,54 @@
+<div class="container">
+
+    <header>
+        <h1>Test Your Luck!</h1>
+    </header>
+
+    <div class="container-odds">
+        <div>
+            <h2>Odds</h2>
+            <div>
+                <ul>
+                    {{#each odds}}
+                    <p><span>Team: </span> {{this.team1}}</p>
+                    <p><span>Bet: </span> {{new_bet}} </p>
+                    <p><span>New Reward: </span> {{this.newAmount}}</p>
+                    {{/each}}
+                </ul>
+                <div class="bet-form">
+                    <form class="newBetForm">
+                        <input id="newBet_input" type="number" name="betAmount"
+                            placeholder="Enter an amount to place bet!"></input>
+                        <button id="newBet_input-submit" type="submit" data-id="{{this.id}}">Place Bet!</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+        <div>
+            <h2>Odds</h2>
+        </div>
+        <div>
+            <ul>
+                {{#each odds}}
+                <p id="team2">Team: {{this.team2}}
+                </p>
+                <div class="reward">
+                    <p>
+                        Pay Out: {{this.result}}
+                    </p>
+                </div>
+
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+
+    <button type="submit" id="" class="generate_bet">Generate Bet!</button>
+
+    <div class="current_balance">
+        <h3>Current Balance: {{this.current_balance}}</h3>
+    </div>
+
+</div>
