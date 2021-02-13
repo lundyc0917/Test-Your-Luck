@@ -55,7 +55,7 @@ router.put('/api/odds/update', async (req, res) => {
      },
      {
      where: {
-       id: req.body.id,
+       team1: req.body.team1,
      },
     },
   ).then((dbOdds) => {
