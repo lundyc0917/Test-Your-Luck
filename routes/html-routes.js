@@ -14,7 +14,7 @@ const market = 'spreads'; // h2h | spreads | totals
 module.exports = function(app) {
   // index route loads view.html
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/main.html"));
+    // res.sendFile(path.join(__dirname, "../public/main.html"));
     axios.get('https://api.the-odds-api.com/v3/odds', {
     params: {
         api_key: api_key,
@@ -27,8 +27,9 @@ module.exports = function(app) {
     // response.data.data contains a list of live and 
     //   upcoming events and odds for different bookmakers.
     // Events are ordered by start time (live events are first)
-    console.log(JSON.stringify(response.data.data[Math.floor((Math.random() * 10)+1)],null,2))
+
     var gameData = response.data.data[Math.floor((Math.random() * 10)+1)]
+    console.log(JSON.stringify(gameData,null,2))
     // Check your usage
     console.log('See',gameData)
     console.log('Remaining requests',response.headers['x-requests-remaining'])
