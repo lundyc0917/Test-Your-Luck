@@ -30,6 +30,7 @@ module.exports = function(app) {
 
     var gameData = response.data.data[Math.floor((Math.random() * 10)+1)]
     console.log(JSON.stringify(gameData,null,2))
+    
     // Check your usage
     console.log('See',gameData)
     console.log('Remaining requests',response.headers['x-requests-remaining'])
