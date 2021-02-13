@@ -9,7 +9,7 @@
 
   This application is for all the sports betters lovers out there. This application will allow you to place bets between two teams using an API which will be stored in the database as well as your current balance, bet amount and new amount.
 
-  :round_pushpin: [Click here to navigate to deployed app on Heroku!](https://.herokuapp.com) :round_pushpin:
+  :round_pushpin: [Click here to navigate to deployed app on Heroku!](https://test-your-luck.herokuapp.com/) :round_pushpin:
   
   ## Table of Contents
   
