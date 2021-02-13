@@ -47,4 +47,18 @@ module.exports = function(app) {
   app.get("/odds", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/odds.html"));
   });
+
+  app.get("/api/odds", function(req, res) {
+    db.Odds.findAll({
+      include: [db.Post]
+    }).then(function(dbOdds) {
+      res.json(dbOdds);
+    });
+  });
+
+  app.post("/api/odds", function(req, res) {
+    db.Odds.create(req.body).then(function(dbOdds) {
+      res.json(dbOdds);
+    });
+  });
 };

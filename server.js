@@ -5,6 +5,7 @@ const db = require('./models');
 const app = express();
 // Serve static content for the app from the 'public' directory in the application directory.
 app.use(express.static('public'));
+const controller = require('./controllers/luck_controller');
 
 
 // Parse application body
@@ -30,6 +31,7 @@ const routes = require('./routes/html-routes.js');
 
 // app.use(routes);
 routes(app);
+app.use(controller);
 
 var PORT = process.env.PORT || 8080;
 db.sequelize.sync().then(() => {

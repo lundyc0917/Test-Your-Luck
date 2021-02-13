@@ -19,33 +19,23 @@ $(document).ready(function () {
     console.log(result);
     console.log(odds);
     if (newBet_input) {
+      console.log($(".teams")[0]);
       var new_bet = {
         bet_amount: newBet_input,
-        // new_amount: newBet_input
+        new_amount: result,
+        team1: $(".teams")[0].textContent,
+        team2: $(".teams")[1].textContent,
       };
+
       console.log(new_bet);
       // POST request
       $.ajax({
         method: 'POST',
-        url: '/odds/create',
+        url: '/api/odds/create',
         data: new_bet,
       }).then(function(data) {
         // location.reload();
       });
       };
     });
-
-  
-
-      //  Send POST request
-    //   $.ajax("/api/luck", {
-    //     type: "POST",
-    //     data: new_bet,
-    //   }).then(function () {
-    //     console.log(new_bet, "New Bet Placed!");
-    //     location.reload();
-    //   });
-    // } else {
-    //   alert("Please enter a numerical bet!");
-    // }
   })
