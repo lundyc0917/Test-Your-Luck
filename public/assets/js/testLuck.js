@@ -19,7 +19,6 @@ $(document).ready(function () {
     console.log(result);
     console.log(odds);
     if (newBet_input) {
-      console.log($(".teams")[0]);
       var new_bet = {
         bet_amount: newBet_input,
         new_amount: result,
@@ -36,6 +35,15 @@ $(document).ready(function () {
       }).then(function(data) {
         // location.reload();
       });
-      };
+
+      $.ajax({
+        method: 'PUT',
+        url: '/api/odds/update',
+        data: new_bet,
+      }).then(function (data) {
+        // reload page to display previous bets
+        location.reload();
+      });
+      }
     });
   })

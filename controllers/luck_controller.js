@@ -48,8 +48,10 @@ router.put('/api/odds/update', async (req, res) => {
   // console.log(condition);
   const dbOdds = await db.Odds.update(
     { 
-      bet_amount: dbOdds.new_amount,
-      new_amount: req.body.new_amount
+      team1: req.body.team1,
+      team2: req.body.team2,
+      bet_amount: req.body.bet_amount,
+      new_amount: req.body.new_amount,
      },
      {
      where: {
