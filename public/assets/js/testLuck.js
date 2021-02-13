@@ -7,10 +7,6 @@ $(document).ready(function () {
   $(".newBetForm").on("submit", function (event) {
     event.preventDefault();
 
-    // let bet_amount = $("#newBet_input").val().trim();
-    // if (newBet_input != "") {
-    //   var new_bet = {
-    //     bet_amount: $("#newBet_input").val().trim(),
     var newBet_input = $(this).children('[name=bet_amount]').val();
     var odds = $("#odds > :first-child").text().split("Odds: ")[1];
     var result = newBet_input * parseFloat(odds);

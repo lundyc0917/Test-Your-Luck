@@ -44,8 +44,6 @@ router.post('/api/odds/create', async (req, res) => {
   });
 
 router.put('/api/odds/update', async (req, res) => {
-  // var condition = 'id = ' + req.params.id;
-  // console.log(condition);
   const dbOdds = await db.Odds.update(
     { 
       team1: req.body.team1,
@@ -62,17 +60,6 @@ router.put('/api/odds/update', async (req, res) => {
     res.json('/');
   });
 })
-
-
-//     (result) => { 
-//       if (result.changedRows === 0) {
-//         return res.status(404).end();
-//       } else {
-//         res.status(200).end();
-//       }
-//     });
-//     console.log('updated')
-
 
 // Export routes for server.js to use.
 module.exports = router;
