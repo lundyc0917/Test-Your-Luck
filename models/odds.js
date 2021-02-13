@@ -44,8 +44,6 @@ const Odds = sequelize.define("Odds", {
         }
     },
 });
-Odds.associate = function(models) {
-    Odds.belongsTo(models.User)
-}
+
 return Odds;
 }
