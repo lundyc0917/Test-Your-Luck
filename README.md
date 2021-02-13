@@ -97,4 +97,3 @@
  ## Contribution
 
   * [Odds API](https://github.com/the-odds-api)
-  * 
