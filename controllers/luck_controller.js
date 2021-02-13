@@ -1,9 +1,9 @@
 // Dependencies
 const express = require('express');
-const Sequelize = require('sequelize');
+// const Sequelize = require('sequelize');
 const router = express.Router();
 const db = require('../models');
-const axios = require('axios').default
+// const axios = require('axios').default
 
 // Create all the routes and set up logic.
 router.get('/', (req, res) => {
@@ -27,8 +27,11 @@ router.get('/odds', async (req, res) => {
 // post route to create bet
 router.post('/api/odds/create', async (req, res) => {
   const newBet = new db.Odds({
-    bet_amount: req.body.bet_amount, 
+    team1: req.body.team1,
+    team2: req.body.team2,
+    bet_amount: req.body.bet_amount,
     new_amount: req.body.new_amount,
+    
     
   });
   try {
@@ -36,6 +39,7 @@ router.post('/api/odds/create', async (req, res) => {
     res.redirect('/');
   } catch (err) {
     res.status(500).json(err);
+    console.log(err);
   }
   });
 
@@ -44,7 +48,7 @@ router.put('/api/odds/update', async (req, res) => {
   // console.log(condition);
   const dbOdds = await db.Odds.update(
     { 
-      bet_amount: dbOdds.bet_amount,
+      bet_amount: dbOdds.new_amount,
       new_amount: req.body.new_amount
      },
      {
