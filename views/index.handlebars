@@ -14,14 +14,16 @@
                     <p><span class="category">Team: </span>{{this}}</p>
                     {{/each}}
                     {{!-- Loop for array of odds --}}
-                    {{#each sites}}
-                    <p><span class="category"> Odds: </span>{{this.odds.spreads.odds}}</p>
+                    <div id="odds" >
+                    {{#each sites.[0].odds.spreads.odds}}
+                    <p data-odds="{{this}}"><span class="category">Odds: </span>{{this}}</p>
                     {{/each}}
-                    {{!-- New bet input --}}
-                    <p><span class="category">Bet: </span>{{new_bet}}</p>
-                    <p><span class="category">New Reward: </span>{{new_amount}}</p>
 
-                    {{home_team}}
+                    </div>
+                    {{!-- New bet input --}}
+                    <p><span id="userBet" class="category"></span>{{new_bet}}</p>
+                    {{!-- <p><span class="category">New Reward: </span>{{new_amount}}</p> --}}
+
 
                 </div>
                 <div class="bet-form">
