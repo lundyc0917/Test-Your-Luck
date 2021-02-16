@@ -37,7 +37,8 @@ $(document).ready(function () {
         // $("tr").append(`${tableData}`);
       }
     });
-  });
+  }
+  );
 
   $(".newBetForm").on("submit", function (event) {
     event.preventDefault();
