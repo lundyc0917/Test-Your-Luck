@@ -53,7 +53,6 @@ p {
   margin-bottom: 10px;
   /* padding: 2%; */
   justify-content: space;
-  
 }
 
 #container-teams {
@@ -64,7 +63,6 @@ p {
   text-overflow: ellipsis;
   white-space: wrap;
   width: 100%;
-  
 }
 
 .container {
@@ -73,21 +71,39 @@ p {
   margin-top: 50px;
 }
 
-th, td {
-  display: grid;
-  /* grid-template-columns: 6fr; */
-  /* grid-gap: 20px; */
+th {
+  /* border: 1px solid #999; */
+  padding: 0.5rem;
+  font-size: 30px;
+  align-items: space-between;
+}
+
+th,
+td {
+  /* display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 1.5rem; */
   width: 100%;
   justify-content: space-between;
 }
 
 table {
+  border-collapse: collapse;
   display: grid;
-  /* grid-template-columns: 1fr 2fr 2fr 1fr 1fr; */
   grid-gap: 20px;
-  justify-content: space-between;
   border: solid 3px black;
   border-radius: 10px;
   padding: 20px;
-  
+}
+
+.generate_bet {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(16, 16, 108, 0.831);
+  color: white;
+
+}
+
+.current_balance {
+  padding: 10px;
 }
