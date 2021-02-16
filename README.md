@@ -21,10 +21,10 @@ This application is for all the sports betters lovers out there. This applicatio
 
 ## Demonstration
 ### Table View
-![Table View](./public/assets/img/db.png)
+![Table View](./public/assets/img/db-screen.png)
 
 ### Main 
-![Main](./public/assets/img/main.png)
+![Main](./public/assets/img/main-screen.png)
 
 ## Features
 
