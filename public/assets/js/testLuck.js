@@ -8,7 +8,7 @@ $(document).ready(function () {
       console.log("It Works", data);
       // location.reload();
 
-      const header = document.createElement("th");
+      const header = document.createElement("tr");
       header.innerHTML = [
         `<tr>
          <th>ID</th>
@@ -21,7 +21,7 @@ $(document).ready(function () {
       $(".table").append(header);
 
       for (let i = 0; i < data.length; i++) {
-        const tableData = document.createElement("td");
+        const tableData = document.createElement("tr");
         // string literal
         tableData.innerHTML = [
           `<tr>
