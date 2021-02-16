@@ -11,24 +11,29 @@ router.get('/', (req, res) => {
 });
 
 router.get('/odds', async (req, res) => {
-  try {
-    const dbOdds = await db.Odds.findAll({
-      include: [
-        {
-          model: db.Odds,
-          attributes: ['team1', 'team2'],
-        },
-      ],
-    }).map((el) => el.get({ plain: true })); 
+  console.log('Swann')
+//   try {
+//     const dbOdds = await db.Odds.findAll({
+//       include: [
+//         {
+//           model: db.Odds,
+//           attributes: ['team1', 'team2'],
+//         },
+//       ],
+//     }).map((el) => el.get({ plain: true })); 
   
-  const hbsObject = {
-    odds: dbOdds,
-  };
-  // console.log(hbsObject);
-  return res.render('index', hbsObject);
-} catch (err) {
-  return res.status(500).json(err);
-}
+//   const hbsObject = {
+//     odds: dbOdds,
+//   };
+//   // console.log(hbsObject);
+//   return res.render('index', hbsObject);
+// } catch (err) {
+//   return res.status(500).json(err);
+// }
+
+const dbOdds = await db.Odds.findAll()
+res.send(dbOdds);
+console.log('Hi there',dbOdds)
 });
 
 // post route to create bet
@@ -39,7 +44,6 @@ router.post('/api/odds/create', async (req, res) => {
     bet_amount: req.body.bet_amount,
     new_amount: req.body.new_amount,
     
-    
   });
   try {
     const dbOdds = await newBet.save();
@@ -49,6 +53,7 @@ router.post('/api/odds/create', async (req, res) => {
     console.log(err);
   }
   });
+  
 
 
 // Export routes for server.js to use.

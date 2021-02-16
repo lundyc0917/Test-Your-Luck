@@ -1,8 +1,27 @@
 $(document).ready(function () {
-  // $(".generate_bet").on("submit", function (event) {
-  //   event.preventDefault();
-  //   console.log("WORKS");
-  // });
+
+  $(".generate_bet").on("click", function (event) {
+    event.preventDefault();
+    $.ajax({
+      method: 'GET',
+      url: '/odds'
+    }).then(function (data) {
+      console.log('It Works', data)
+      // location.reload();
+
+
+
+      for (let i = 0; i < data.length; i++) {
+        const div = document.createElement("h4");
+        // string literal
+        div.innerHTML = `${data[i].team1} ${data[i].team2} ${data[i].bet_amount} ${data[i].new_amount}`
+        $("#pastWagers").append(div)
+      }
+
+
+    });
+
+  });
 
   $(".newBetForm").on("submit", function (event) {
     event.preventDefault();
@@ -28,9 +47,17 @@ $(document).ready(function () {
         method: 'POST',
         url: '/api/odds/create',
         data: new_bet,
-      }).then(function(data) {
+      }).then(function (data) {
         location.reload();
       });
-      }
-    });
+    }
+
   })
+
+
+
+
+
+
+
+})
