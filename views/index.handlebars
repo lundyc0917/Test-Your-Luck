@@ -14,18 +14,16 @@
                     <p><span class="category">Team: </span><span class="teams">{{this}}</span></p>
                     {{/each}}
                     {{!-- Loop for array of odds --}}
-                    <div id="odds" >
-                    {{#each sites.[0].odds.spreads.odds}}
-                    <p data-odds="{{this}}"><span class="category">Odds: </span>{{this}}</p>
-                    {{/each}}
+                    <div id="odds">
+                        {{#each sites.[0].odds.spreads.odds}}
+                        <p data-odds="{{this}}"><span class="category">Odds: </span>{{this}}</p>
+                        {{/each}}
 
                     </div>
                     {{!-- New bet input --}}
                     <p><span id="userBet" class="category"></span>{{new_bet}}</p>
-                    {{!-- <p><span class="category">New Reward: </span>{{new_amount}}</p> --}}
-
-
                 </div>
+
                 <div class="bet-form">
                     <form class="newBetForm">
                         <input id="newBet_input" type="number" name="bet_amount"
@@ -36,11 +34,19 @@
             </div>
 
         </div>
-        <button  id="" class="generate_bet">Generate Bet!</button>
 
-        <div id="currentBalance" class="current_balance">
+        <div>
+            <button class="generate_bet">Generate Bet!</button>
+        </div>
+ </div>
+
+        <div class="current_balance">
+            <h3>Previous Wagers</h3>
+            <table class="table" id="pastWagers"></table>
+        </div>
+        {{!-- <div id="currentBalance" class="current_balance">
             <h3>Previous Wagers: {{this.current_balance}}</h3>
             <div id="pastWagers"></div>
-        </div>
+        </div> --}}
 
-    </div>
+   
