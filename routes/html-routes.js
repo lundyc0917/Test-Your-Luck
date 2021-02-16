@@ -14,7 +14,6 @@ const market = 'spreads'; // h2h | spreads | totals
 module.exports = function(app) {
   // index route loads view.html
   app.get("/", function(req, res) {
-    // res.sendFile(path.join(__dirname, "../public/main.html"));
     axios.get('https://api.the-odds-api.com/v3/odds', {
     params: {
         api_key: api_key,

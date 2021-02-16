@@ -4,7 +4,7 @@
 
 ## Description
 
-This application is for all the sports betters lovers out there. This application will allow you to place bets between two teams using an API which will be stored in the database as well as each team, bet amount, and new amount. This database will be submitted to the database once `Place Bet!` button is clicked which will stay on the page but then disappear. To display previous wagers, you must press the `Generate Bet!` button and a table will be displayed below. 
+This application is for all the sports betters lovers out there. This application will allow you to place bets between two teams using an API which will be stored in the database as well as each team, bet amount, and new amount. This database will be submitted to the database once `Place Bet!` button is clicked which will stay on the page but then disappear. To display previous wagers, you must press the `Show Statement` button and a table will be displayed below. 
 
 :round_pushpin: [Click here to navigate to deployed app on Heroku!](https://test-your-luck.herokuapp.com/) :round_pushpin:
 
