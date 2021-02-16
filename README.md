@@ -1,10 +1,10 @@
-# Test_Your-Luck
+# :soccer: Test_Your-Luck :soccer:
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
 
-This application is for all the sports betters lovers out there. This application will allow you to place bets between two teams using an API which will be stored in the database as well as your current balance, bet amount and new amount.
+This application is for all the sports betters lovers out there. This application will allow you to place bets between two teams using an API which will be stored in the database as well as each team, bet amount, and new amount. This database will be submitted to the database once `Place Bet!` button is clicked which will stay on the page but then disappear. To display previous wagers, you must press the `Generate Bet!` button and a table will be displayed below. 
 
 :round_pushpin: [Click here to navigate to deployed app on Heroku!](https://test-your-luck.herokuapp.com/) :round_pushpin:
 
@@ -17,20 +17,21 @@ This application is for all the sports betters lovers out there. This applicatio
 - [License](#license)
 - [Collaboration](#collaboration)
 - [Technologies](#technologies)
+- [Resources](#resources)
 
 ## Demonstration
+### Table View
+![Table View](./public/assets/img/db.png)
 
-![](./public/assets/img/)
+### Main 
+![Main](./public/assets/img/main.png)
 
 ## Features
 
-- The `config` folder houses the two javascript files:
-  - `connection.js` code to connect node to MySQL.
-  - `orm.js` which contains the methods used in order to retrieve and store data in the database.
-- The public folder contains the css and images files that represent the front-end.
-- The `db` folder contains the MySQL files including:
-  - `schema.sql` which contain the SQL queries.
-  - `seeds.sql` can contain a few starter burgers to populate the database with options.
+- Shows two teams depending on league chosen in the API (in this case, Soccer England League).
+- Place a bet depending on the odds displayed.
+- Pull from MySQL database and show previous bets placed.
+- Use of a calculator to calculate possible winnings.
 
 ### Directory Structure
 
@@ -78,6 +79,7 @@ This project was creating with collaboration from:
 
 ## Technologies
 
+- [Axios](https://npmjs.org/package/axios)
 - [Node.js](https://nodejs.org/en/)
 - [Express.js](https://expressjs.com/)
 - [Express Handlebars](https://www.npmjs.com/package/express-handlebars)
@@ -88,6 +90,6 @@ This project was creating with collaboration from:
 - [Visual Studio Code](https://code.visualstudio.com/)
 - Terminal / Git Bash
 
-## Contribution
+## Resources
 
 - [Odds API](https://github.com/the-odds-api)
