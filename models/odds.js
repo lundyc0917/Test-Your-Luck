@@ -15,20 +15,6 @@ const Odds = sequelize.define("Odds", {
             len: [1]
         }
     },
-    // selections: {
-    //     type: DataTypes.STRING,
-    //     allowNull: false,
-    //     validate: {
-    //         len: [1]
-    //     }
-    // },
-    // result: {
-    //     type: DataTypes.STRING,
-    //     allowNull: false,
-    //     validate: {
-    //         len: [1]
-    //     }
-    // },
     bet_amount: {
         type: DataTypes.INTEGER,
         defaultValue: 0,

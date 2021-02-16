@@ -29,7 +29,7 @@ module.exports = function(app) {
     // Events are ordered by start time (live events are first)
 
     var gameData = response.data.data[Math.floor((Math.random() * 10)+1)]
-    console.log(JSON.stringify(gameData,null,2))
+    // console.log(JSON.stringify(gameData,null,2))
     
     // Check your usage
     console.log('See',gameData)
@@ -43,22 +43,4 @@ module.exports = function(app) {
 })
   });
 
-  // // odds route loads odds.html
-  app.get("/odds", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/odds.html"));
-  });
-
-  app.get("/api/odds", function(req, res) {
-    db.Odds.findAll({
-      include: [db.Post]
-    }).then(function(dbOdds) {
-      res.json(dbOdds);
-    });
-  });
-
-  app.post("/api/odds", function(req, res) {
-    db.Odds.create(req.body).then(function(dbOdds) {
-      res.json(dbOdds);
-    });
-  });
 };

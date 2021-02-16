@@ -29,15 +29,6 @@ $(document).ready(function () {
         url: '/api/odds/create',
         data: new_bet,
       }).then(function(data) {
-        // location.reload();
-      });
-
-      $.ajax({
-        method: 'PUT',
-        url: '/api/odds/update',
-        data: new_bet,
-      }).then(function (data) {
-        // reload page to display previous bets
         location.reload();
       });
       }
