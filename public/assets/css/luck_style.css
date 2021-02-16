@@ -53,6 +53,17 @@ p {
   padding: 20px;
 }
 
+#odds{
+  display: grid;
+  grid-template-columns: 4fr 4fr;
+  grid-gap: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: wrap;
+  width: 100%;
+  padding: 10px;
+}
+
 #new_bet-btn:hover {
   background-color: rgb(58, 141, 230);
   transform: scale(1.07);
