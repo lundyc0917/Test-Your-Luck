@@ -36,11 +36,34 @@
             </div>
 
         </div>
-        <button  id="" class="generate_bet">Generate Bet!</button>
 
-        <div id="currentBalance" class="current_balance">
+        <div>
+        <button  id="" class="generate_bet">Generate Bet!</button>
+        </div>
+
+        <div class="current_balance">
+            <h3>Previous Wagers</h3>
+            <br>
+            <table class="table" id="pastWagers">
+                {{#each odds}}
+                <tr>
+                    <th>Id</th>
+                        <td>{{id}}</td>
+                    <th>Team 1</th>
+                        <td>{{team1}}</td>
+                    <th>Team 2</th>
+                        <td>{{team2}}</td>
+                    <th>Bet Amount</th>
+                        <td>{{bet_amount}}</td>
+                    <th>Possible Reward</th>
+                        <td>{{new_amount}}</td>
+                </tr>
+                {{/each}}
+            </table>
+        </div>
+        {{!-- <div id="currentBalance" class="current_balance">
             <h3>Previous Wagers: {{this.current_balance}}</h3>
             <div id="pastWagers"></div>
-        </div>
+        </div> --}}
 
     </div>

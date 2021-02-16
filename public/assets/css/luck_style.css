@@ -73,9 +73,8 @@ p {
   margin-top: 50px;
 }
 
-/* .body{
-  background-color: #0d0106;
-} */
-
-/* .current_balance {
-} */
+.table {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 1fr 1fr;
+  grid-gap: 30px;
+}

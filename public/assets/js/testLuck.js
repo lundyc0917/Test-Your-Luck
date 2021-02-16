@@ -12,10 +12,11 @@ $(document).ready(function () {
 
 
       for (let i = 0; i < data.length; i++) {
-        const div = document.createElement("h4");
+        const header = document.createElement('th');
+        const tr = document.createElement("td");
         // string literal
-        div.innerHTML = `${data[i].team1} ${data[i].team2} ${data[i].bet_amount} ${data[i].new_amount}`
-        $("#pastWagers").append(div)
+        tr.innerHTML = `${data[i].id} ${data[i].team1} ${data[i].team2} ${data[i].bet_amount} ${data[i].new_amount}`
+        $("#pastWagers").append(tr);
       }
 
 
