@@ -1,6 +1,5 @@
 // Dependencies
 const express = require('express');
-// const Sequelize = require('sequelize');
 const router = express.Router();
 const db = require('../models');
 
@@ -11,26 +10,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/odds', async (req, res) => {
-  console.log('Swann')
-//   try {
-//     const dbOdds = await db.Odds.findAll({
-//       include: [
-//         {
-//           model: db.Odds,
-//           attributes: ['team1', 'team2'],
-//         },
-//       ],
-//     }).map((el) => el.get({ plain: true })); 
-  
-//   const hbsObject = {
-//     odds: dbOdds,
-//   };
-//   // console.log(hbsObject);
-//   return res.render('index', hbsObject);
-// } catch (err) {
-//   return res.status(500).json(err);
-// }
-
+ 
 const dbOdds = await db.Odds.findAll()
 res.send(dbOdds);
 console.log('Hi there',dbOdds)
@@ -54,7 +34,5 @@ router.post('/api/odds/create', async (req, res) => {
   }
   });
   
-
-
 // Export routes for server.js to use.
 module.exports = router;

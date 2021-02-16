@@ -32,9 +32,7 @@ $(document).ready(function () {
            <td> ${data[i].new_amount}</td>
            </tr>`,
         ];
-        // `${data[i].id} ${data[i].team1} ${data[i].team2} ${data[i].bet_amount} ${data[i].new_amount}`
         $("#pastWagers").append(tableData);
-        // $("tr").append(`${tableData}`);
       }
     });
   }
